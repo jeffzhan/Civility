@@ -29,15 +29,28 @@ const ColoredBorderTextField = styled(TextField)`
 `;
 
 export default function Home() {
-  const [inputText, setInputText] = useState("");
+  const API_URL = "http://localhost:3001";
+
+  const [prompt, setPrompt] = useState("");
+  const [data, setData] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleModalOpen = () => setModalOpen(true);
   const handleModalClose = () => setModalOpen(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(inputText);
+  const handleChange = (e) => {
+    setPrompt(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("nice");
+    handleModalOpen();
+    setData(null);
+    fetch(`${API_URL}/api?prompt=${prompt}`)
+      .then((res) => res.json())
+      .then((data) => setData(data));
+    console.log(data);
   };
 
   return (
@@ -53,7 +66,7 @@ export default function Home() {
 
       <Modal open={modalOpen} onClose={handleModalClose}>
         <Box>
-          <Results />
+          <Results data={data} />
         </Box>
       </Modal>
 
@@ -93,7 +106,7 @@ export default function Home() {
           cancelled :)
         </Typography>
 
-        <div className="roundedTextField">
+        <Box component="form" onSubmit={handleSubmit}>
           <ColoredBorderTextField
             multiline
             variant="outlined"
@@ -107,34 +120,32 @@ export default function Home() {
               marginTop: 3,
               borderRadius: 20,
             }}
-            value={inputText}
-            onChange={(event) => {
-              setInputText(event.target.value);
-            }}
+            value={prompt}
+            onChange={handleChange}
           />
-        </div>
 
-        <Stack direction="row" className="button" justifyContent="end">
-          <Button
-            variant="contained"
-            sx={{
-              marginTop: 2,
-              width: "20%",
-              minWidth: "100%",
-              textTransform: "none",
-              borderRadius: "14px",
-              padding: "1rem",
-              backgroundColor: "#585379",
-              fontSize: 18,
-              color: "#FFF0D9",
-              "&:hover": { backgroundColor: "#8c84bf" },
-            }}
-            hover="none"
-            onClick={handleModalOpen}
-          >
-            Check your Civility Score
-          </Button>
-        </Stack>
+          <Stack direction="row" className="button" justifyContent="end">
+            <Button
+              variant="contained"
+              type="submit"
+              sx={{
+                marginTop: 2,
+                width: "20%",
+                minWidth: "100%",
+                textTransform: "none",
+                borderRadius: "14px",
+                padding: "1rem",
+                backgroundColor: "#585379",
+                fontSize: 18,
+                color: "#FFF0D9",
+                "&:hover": { backgroundColor: "#8c84bf" },
+              }}
+              hover="none"
+            >
+              Check your Civility Score
+            </Button>
+          </Stack>
+        </Box>
         <div
           style={{ width: "100%", display: "flex", justifyContent: "center" }}
         >

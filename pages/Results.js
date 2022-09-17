@@ -15,7 +15,7 @@ const style = {
   color: "#585379",
 };
 
-function Results() {
+function Results({ data }) {
   return (
     <div>
       <Box sx={style}>
@@ -25,6 +25,7 @@ function Results() {
         >
           Results
         </Typography>
+        {JSON.stringify(data)}
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
           Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
         </Typography>
