@@ -8,7 +8,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Civility</title>
-        <meta name="description" content="Powered by j.an.h." />
+        <meta name="description" content="Powered by j.a.h." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -32,7 +32,7 @@ export default function Home() {
         <Typography
           variant="h2"
           className={styles.title}
-          sx={{ marginTop: 15 }}
+          sx={{ marginTop:5 }}
         >
           An online text analyzer
         </Typography>
