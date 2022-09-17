@@ -6,7 +6,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: "60%",
+  width: "75%",
   height: "70%",
   bgcolor: "#FFF0D9",
   borderRadius: "40px",
@@ -50,22 +50,17 @@ function Results({ data }) {
           variant="h5"
           sx={{ fontWeight: "bold", fontFamily: "Lato" }}
         >
-          Toxicity
+          Toxicity Level
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
-          {data[0].toxicity}
-        </Typography>
-
-        <Typography
-          sx={{
-            fontSize: "20vh",
-            fontFamily: "Lato",
-            fontWeight: "bold",
-            marginLeft: "65%",
-            marginTop: "-30%",
-          }}
-        >
-          {Math.round(Math.max(data.offense_conf, data.benign_conf) * 100)}%
+          The toxicity level of the message that was typed was{" "}
+          <b>
+            {Math.round(Math.max(data[0].offense, data[0].benign) * 100 * 1.4)}%
+          </b>{" "}
+          {data[0].toxicity.toLowerCase()}.
+          {data[0].offense > data[0].benign
+            ? " Stay safe on the internet, you might get cancelled!"
+            : " This seems alright to post, keep up the good work!"}
         </Typography>
       </Box>
     </div>
