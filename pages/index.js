@@ -183,7 +183,7 @@ export default function Home() {
               underline="none"
               color="#585379"
             >
-              powered by j.a.h. 😍
+              powered by j.a.h. 👌😍👍
             </Link>
           </Stack>
         </div>

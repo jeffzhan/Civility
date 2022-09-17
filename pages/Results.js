@@ -33,7 +33,7 @@ function Results({ data }) {
           Age Warning
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
-          Your comment is meant for <b>{data[0].offense < data[0].benign ? "all ages" : "only ages above 18+"}</b>, so please be sensitive of what you type online! 
+          Your comment is meant for <b>{data[0].benign > data[0].offense ? "all ages" : "only ages above 18+"}</b>, so please be sensitive of what you type online! 
         </Typography>
         <br></br>
         <Typography
