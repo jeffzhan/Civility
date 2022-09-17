@@ -33,7 +33,7 @@ function Results({ data }) {
           Age Warning
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
-          Dummy.
+          Your comment is meant for <b>{data[0].offense < data[0].benign ? "all ages" : "only ages above 18+"}</b>, so please be sensitive of what you type online! 
         </Typography>
         <br></br>
         <Typography
@@ -43,7 +43,7 @@ function Results({ data }) {
           Political
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
-          {data[1].politics}
+          Your comment seems to fall <b>{Math.round(Math.max(data[1].conservative, data[1].liberal) * 100)}%</b> more towards the {data[1].politics} spectrum.
         </Typography>
         <br></br>
         <Typography
