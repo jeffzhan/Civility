@@ -32,12 +32,10 @@ export default function Home() {
   const API_URL = "http://localhost:3001";
 
   const [prompt, setPrompt] = useState("");
-  const [data, setData] = useState({
-    prompt: "",
-    prediction: "",
-    offense_conf: 0.0,
-    benign_conf: 0.0,
-  });
+  const [data, setData] = useState([
+    { toxicity: "", offense: 0.0, benign: 0.0 },
+    { politics: "", conservative: 0.0, liberal: 0.0 },
+  ]);
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleModalOpen = () => setModalOpen(true);
@@ -58,12 +56,18 @@ export default function Home() {
     })
       .then((response) => response.json())
       .then((obj) =>
-        setData({
-          prompt: obj[0].input,
-          prediction: obj[0].prediction,
-          offense_conf: obj[0].labels.Offensive.confidence,
-          benign_conf: obj[0].labels.Benign.confidence,
-        })
+        setData([
+          {
+            toxicity: obj[0].prediction,
+            offense: obj[0].confidences[0].confidence,
+            benign: obj[0].confidences[1].confidence,
+          },
+          {
+            politics: obj[1].prediction,
+            conservative: obj[1].confidences[0].confidence,
+            liberal: obj[1].confidences[1].confidence,
+          },
+        ])
       )
       .catch((error) => {
         console.error("Error:", error);

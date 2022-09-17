@@ -43,7 +43,7 @@ function Results({ data }) {
           Political
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
-          Dummy.
+          {data[1].politics}
         </Typography>
         <br></br>
         <Typography
@@ -53,7 +53,7 @@ function Results({ data }) {
           Toxicity
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
-          {data.prediction}
+          {data[0].toxicity}
         </Typography>
 
         <Typography
