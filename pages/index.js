@@ -1,7 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
+import Results from "./Results.js";
 import styles from "../styles/Home.module.css";
-import { TextField, Typography, Box, Button, Stack, Link } from "@mui/material";
+import {
+  TextField,
+  Typography,
+  Box,
+  Button,
+  Stack,
+  Link,
+  Modal,
+} from "@mui/material";
 import { styled } from "@mui/system";
 import { useState } from "react";
 
@@ -21,6 +30,10 @@ const ColoredBorderTextField = styled(TextField)`
 
 export default function Home() {
   const [inputText, setInputText] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleModalOpen = () => setModalOpen(true);
+  const handleModalClose = () => setModalOpen(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,6 +48,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Modal open={modalOpen} onClose={handleModalClose}>
+        <Box>
+          <Results />
+        </Box>
+      </Modal>
+
       <Stack
         sx={{
           margin: "auto",
@@ -48,7 +67,12 @@ export default function Home() {
         <Typography variant="h4" fontFamily="Lato">
           civility
           <span className={styles.logo}>
-            <Image src="/civility_logo.svg" alt="Vercel Logo" width={50} height={30}/>
+            <Image
+              src="/civility_logo.svg"
+              alt="Vercel Logo"
+              width={50}
+              height={30}
+            />
           </span>
         </Typography>
 
@@ -56,7 +80,8 @@ export default function Home() {
           An online text analyzer
         </Typography>
         <Typography variant="h5" className={styles.subTitle}>
-          simply enter your text below, and we'll let you know if you will be cancelled :)
+          simply enter your text below, and we'll let you know if you will be
+          cancelled :)
         </Typography>
 
         <div className="roundedTextField">
@@ -65,13 +90,18 @@ export default function Home() {
             variant="outlined"
             rows={9}
             placeholder="Type text here..."
-            fontFamily="Lato"
-            inputProps={{ style: { fontSize: 20, color: "black" } }}
-            sx={{ width: "100%", marginTop: 3, borderRadius: 20 }}
+            inputProps={{
+              style: { fontSize: 20, color: "black", fontFamily: "Lato" },
+            }}
+            sx={{
+              width: "100%",
+              marginTop: 3,
+              borderRadius: 20,
+            }}
             value={inputText}
             onChange={(event) => {
               setInputText(event.target.value);
-            }}   
+            }}
           />
         </div>
 
@@ -91,11 +121,14 @@ export default function Home() {
               "&:hover": { backgroundColor: "#8c84bf" },
             }}
             hover="none"
+            onClick={handleModalOpen}
           >
             Check your Civility
           </Button>
         </Stack>
-        <div style={{width:"100%", display:"flex", justifyContent:"center"}}>
+        <div
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        >
           <Stack
             direction="row"
             position="fixed"
@@ -113,7 +146,6 @@ export default function Home() {
             </Link>
           </Stack>
         </div>
-        
       </Stack>
     </div>
   );
