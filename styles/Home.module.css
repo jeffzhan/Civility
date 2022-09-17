@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-.container {
+/* .container {
   padding: 0 2rem;
 }
 
@@ -9,13 +9,7 @@
 }
 
 .textBox {
-  min-height: 100vh;
-  width: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
 }
 
 .footer {
@@ -65,4 +59,13 @@
     width: 100%;
     flex-direction: column;
   }
-}
+} */
+
+
+/* .main{
+  align-items: center;
+} */
+
+/* .textBox {
+  height: 100vh;
+} */
