@@ -53,4 +53,7 @@
   .logo{
     transform: translateY(-25%) translateX(20%);
   }
+  /* .modal{
+    background-color: black;
+  } */
 }

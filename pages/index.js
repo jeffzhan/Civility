@@ -122,7 +122,7 @@ export default function Home() {
 
         <Typography variant="h2" className={styles.title} sx={{ marginTop: 3 }}>
         Maintain a spotless online persona - anywhere, anytime.
-        </Typography>
+        </Typography><br></br>
         <Typography variant="h5" className={styles.subTitle}>
         simply enter your text below, and we'll let you know if you might be about to do something you'll regret ;)
         </Typography>
