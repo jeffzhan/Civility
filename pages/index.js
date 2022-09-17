@@ -69,14 +69,6 @@ export default function Home() {
       >
         <Typography variant="h4" fontFamily="Lato" color="#585379">
           civility
-          <span className={styles.logo}>
-            <Image
-              src="/civility_logo.svg"
-              alt="Vercel Logo"
-              width={50}
-              height={30}
-            />
-          </span>
           <div className={styles.logo}>
             <a
               href="https://hackthenorth2022.devpost.com/?ref_feature=challenge&ref_medium=your-open-hackathons&ref_content=Submissions+open"
