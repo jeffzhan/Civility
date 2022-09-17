@@ -7,7 +7,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "60%",
-  height: "50%",
+  height: "70%",
   bgcolor: "#FFF0D9",
   borderRadius: "40px",
   boxShadow: 24,
@@ -20,10 +20,37 @@ function Results() {
     <div>
       <Box sx={style}>
         <Typography
-          variant="h5"
+          variant="h4"
           sx={{ fontWeight: "bold", fontFamily: "Lato" }}
         >
           Results
+        </Typography>
+        <br></br>
+        <Typography
+          variant="h5"
+          sx={{ fontWeight: "bold", fontFamily: "Lato" }}
+        >
+          Age Warning
+        </Typography>
+        <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+        </Typography>
+        <br></br>
+        <Typography
+          variant="h5"
+          sx={{ fontWeight: "bold", fontFamily: "Lato" }}
+        >
+          Political
+        </Typography>
+        <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+        </Typography>
+        <br></br>
+        <Typography
+          variant="h5"
+          sx={{ fontWeight: "bold", fontFamily: "Lato" }}
+        >
+          Toxicity
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
           Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
