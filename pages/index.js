@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { TextField, Typography, Box, Button, Stack, Link } from "@mui/material";
 import { styled } from "@mui/system";
+import { useState } from "react";
 
 const ColoredBorderTextField = styled(TextField)`
   &:hover {
@@ -19,6 +20,12 @@ const ColoredBorderTextField = styled(TextField)`
 `;
 
 export default function Home() {
+  const [inputText, setInputText] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -61,6 +68,10 @@ export default function Home() {
             fontFamily="Lato"
             inputProps={{ style: { fontSize: 20, color: "black" } }}
             sx={{ width: "100%", marginTop: 3, borderRadius: 10 }}
+            value={inputText}
+            onChange={(event) => {
+              setInputText(event.target.value);
+            }}
           />
         </div>
 
