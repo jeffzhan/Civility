@@ -24,6 +24,7 @@ export default function Home() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(inputText);
   };
 
   return (
@@ -46,41 +47,41 @@ export default function Home() {
       >
         <Typography variant="h4" fontFamily="Lato">
           civility
-          {/* <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span> */}
+          <span className={styles.logo}>
+            <Image src="/civility_logo.svg" alt="Vercel Logo" width={50} height={30}/>
+          </span>
         </Typography>
 
         <Typography variant="h2" className={styles.title} sx={{ marginTop: 3 }}>
           An online text analyzer
         </Typography>
-
         <Typography variant="h5" className={styles.subTitle}>
-          simply enter your text below!
+          simply enter your text below, and we'll let you know if you will be cancelled :)
         </Typography>
 
         <div className="roundedTextField">
           <ColoredBorderTextField
             multiline
             variant="outlined"
-            rows={10}
+            rows={9}
             placeholder="Type text here..."
             fontFamily="Lato"
             inputProps={{ style: { fontSize: 20, color: "black" } }}
-            sx={{ width: "100%", marginTop: 3, borderRadius: 10 }}
+            sx={{ width: "100%", marginTop: 3, borderRadius: 20 }}
             value={inputText}
             onChange={(event) => {
               setInputText(event.target.value);
-            }}
+            }}   
           />
         </div>
 
-        <Stack direction="row" justifyContent="end">
+        <Stack direction="row" className="button" justifyContent="end">
           <Button
             variant="contained"
             sx={{
               marginTop: 2,
               width: "20%",
+              minWidth: "100%",
               textTransform: "none",
               borderRadius: "14px",
               padding: "1rem",
@@ -94,22 +95,25 @@ export default function Home() {
             Check your Civility
           </Button>
         </Stack>
-        <Stack
-          direction="row"
-          position="fixed"
-          bottom="0"
-          sx={{ marginBottom: 2, left: "46%" }}
-        >
-          <Link
-            href="https://github.com/jeffzhan/civility"
-            target="_blank"
-            rel="noopener noreferrer"
-            underline="none"
-            color="#585379"
+        <div style={{width:"100%", display:"flex", justifyContent:"center"}}>
+          <Stack
+            direction="row"
+            position="fixed"
+            bottom="0"
+            sx={{ marginBottom: 2 }}
           >
-            powered by j.a.h. 😍
-          </Link>
-        </Stack>
+            <Link
+              href="https://github.com/jeffzhan/civility"
+              target="_blank"
+              rel="noopener noreferrer"
+              underline="none"
+              color="#585379"
+            >
+              powered by j.a.h. 😍
+            </Link>
+          </Stack>
+        </div>
+        
       </Stack>
     </div>
   );
