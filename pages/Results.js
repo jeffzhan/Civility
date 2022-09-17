@@ -13,6 +13,10 @@ const style = {
   boxShadow: 24,
   p: 7,
   color: "#585379",
+  "@media (max-width: 600px)": {
+    height: "90%",
+    width: "80%"
+  }
 };
 
 function Results({ data }) {
