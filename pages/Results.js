@@ -34,7 +34,7 @@ function Results({ data }) {
           Age Warning
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
-          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          Dummy.
         </Typography>
         <br></br>
         <Typography
@@ -44,7 +44,7 @@ function Results({ data }) {
           Political
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
-          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+         Dummy.
         </Typography>
         <br></br>
         <Typography
@@ -54,7 +54,11 @@ function Results({ data }) {
           Toxicity
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
-          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          Dummy.
+        </Typography>
+
+        <Typography sx={{fontSize: "20vh", fontFamily: "Lato", fontWeight: "bold", marginLeft:"65%", marginTop:"-30%" }}>
+          75%
         </Typography>
       </Box>
     </div>
