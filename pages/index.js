@@ -7,17 +7,22 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <header>
-        <p>Civility</p>
+        <p>
+          Civility{" "}
+          <span className={styles.logo}>
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span>
+        </p>
       </header>
       <Head>
         <title>Civility</title>
         <meta name="description" content="Powered by j.an.h." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <h1 className={styles.title}>Welcome to Civility</h1>
 
+      
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to Civility</h1>
-
         <div>
           <p>A text analyzer for anyone</p>
         </div>
@@ -31,9 +36,6 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           Powered by j.a.h.
-          <span className={styles.logo}>
-            {/* <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} /> */}
-          </span>
         </a>
       </footer>
     </div>
