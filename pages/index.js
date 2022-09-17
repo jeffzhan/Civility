@@ -2,6 +2,21 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { TextField, Typography, Box, Button, Stack, Link } from "@mui/material";
+import { styled } from "@mui/system";
+
+const ColoredBorderTextField = styled(TextField)`
+  &:hover {
+    color: ##585379;
+  }
+  & label.Mui-focused {
+    color: #585379;
+  }
+  & .MuiOutlinedInput-root {
+    &.Mui-focused fieldset {
+      border-color: #585379;
+    }
+  }
+`;
 
 export default function Home() {
   return (
@@ -29,24 +44,26 @@ export default function Home() {
           </span> */}
         </Typography>
 
-        <Typography
-          variant="h2"
-          className={styles.title}
-          sx={{ marginTop:5 }}
-        >
+        <Typography variant="h2" className={styles.title} sx={{ marginTop: 5 }}>
           An online text analyzer
         </Typography>
 
-        <Typography variant="h5" className={styles.subTitle}>simply enter your text below!</Typography>
+        <Typography variant="h5" className={styles.subTitle}>
+          simply enter your text below!
+        </Typography>
 
-        <TextField
-          className={styles.textBox}
-          multiline
-          rows={10}
-          placeholder="Type text here..."
-          fontFamily="Lato"
-          sx={{ width: "100%", marginTop: 3 }}
-        />
+        <div className="roundedTextField">
+          <ColoredBorderTextField
+            multiline
+            variant="outlined"
+            rows={10}
+            placeholder="Type text here..."
+            fontFamily="Lato"
+            inputProps={{ style: { fontSize: 20, color: "black" } }}
+            sx={{ width: "100%", marginTop: 3, borderRadius: 10 }}
+          />
+        </div>
+
         <Stack direction="row" justifyContent="end">
           <Button
             variant="contained"
@@ -57,6 +74,8 @@ export default function Home() {
               borderRadius: "14px",
               padding: "1rem",
               backgroundColor: "#585379",
+              fontSize: 18,
+              color: "#FFF0D9",
               "&:hover": { backgroundColor: "#8c84bf" },
             }}
             hover="none"
@@ -77,7 +96,7 @@ export default function Home() {
             underline="none"
             color="#585379"
           >
-            Powered by j.a.h. 😍
+            powered by j.a.h. 😍
           </Link>
         </Stack>
       </Stack>
