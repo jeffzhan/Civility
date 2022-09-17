@@ -28,9 +28,9 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{width:"100%", display:"flex", justifyContent:"center"}}>
       <Head>
-        <title>Civility</title>
+        <title>civility</title>
         <meta name="description" content="Powered by j.a.h." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -42,14 +42,14 @@ export default function Home() {
           flexDirection: "column",
           width: "70%",
           height: "100vh",
-          marginTop: 15,
+          marginTop: 10,
         }}
       >
-        <Typography variant="h4" fontFamily="Lato">
+        <Typography variant="h4" fontFamily="Lato" color="#585379">
           civility
-          <span className={styles.logo}>
-            <Image src="/civility_logo.svg" alt="Vercel Logo" width={50} height={30}/>
-          </span>
+          <div className={styles.logo}>
+            <a href="https://hackthenorth2022.devpost.com/?ref_feature=challenge&ref_medium=your-open-hackathons&ref_content=Submissions+open" target="_blank"><Image src="/civility_logo.svg" alt="Vercel Logo" width={70} height={60}/></a>
+          </div>
         </Typography>
 
         <Typography variant="h2" className={styles.title} sx={{ marginTop: 3 }}>
@@ -92,7 +92,7 @@ export default function Home() {
             }}
             hover="none"
           >
-            Check your Civility
+            Check your Civility Score
           </Button>
         </Stack>
         <div style={{width:"100%", display:"flex", justifyContent:"center"}}>
