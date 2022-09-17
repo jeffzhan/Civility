@@ -19,14 +19,14 @@ export default function Home() {
         <meta name="description" content="Powered by j.an.h." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className={styles.title}>Welcome to Civility</h1>
+      <h1 className={styles.title}>An online text analyzer</h1>
+      <h2 className={styles.description}>Simply enter your text...</h2>
 
       
-      <main className={styles.main}>
-        <div>
-          <p>A text analyzer for anyone</p>
-        </div>
-        <TextField variant="filled" multiline rows={5} />
+      <main>
+        {/* <TextField variant="filled" /> */}
+        <TextField className={styles.textBox} multiline rows={5} fullWidth label="fullWidth" id="fullWidth" />
+
       </main>
 
       <footer className={styles.footer}>
