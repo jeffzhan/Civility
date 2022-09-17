@@ -44,7 +44,7 @@ export default function Home() {
           </span> */}
         </Typography>
 
-        <Typography variant="h2" className={styles.title} sx={{ marginTop: 5 }}>
+        <Typography variant="h2" className={styles.title} sx={{ marginTop: 3 }}>
           An online text analyzer
         </Typography>
 
@@ -69,7 +69,7 @@ export default function Home() {
             variant="contained"
             sx={{
               marginTop: 2,
-              width: "15%",
+              width: "20%",
               textTransform: "none",
               borderRadius: "14px",
               padding: "1rem",
