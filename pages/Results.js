@@ -25,7 +25,6 @@ function Results({ data }) {
         >
           Results
         </Typography>
-        {JSON.stringify(data)}
         <br></br>
         <Typography
           variant="h5"
@@ -44,7 +43,7 @@ function Results({ data }) {
           Political
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
-         Dummy.
+          Dummy.
         </Typography>
         <br></br>
         <Typography
@@ -54,11 +53,19 @@ function Results({ data }) {
           Toxicity
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
-          Dummy.
+          {data.prediction}
         </Typography>
 
-        <Typography sx={{fontSize: "20vh", fontFamily: "Lato", fontWeight: "bold", marginLeft:"65%", marginTop:"-30%" }}>
-          75%
+        <Typography
+          sx={{
+            fontSize: "20vh",
+            fontFamily: "Lato",
+            fontWeight: "bold",
+            marginLeft: "65%",
+            marginTop: "-30%",
+          }}
+        >
+          {Math.round(Math.max(data.offense_conf, data.benign_conf) * 100)}%
         </Typography>
       </Box>
     </div>
