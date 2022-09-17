@@ -32,7 +32,12 @@ export default function Home() {
   const API_URL = "http://localhost:3001";
 
   const [prompt, setPrompt] = useState("");
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({
+    prompt: "",
+    prediction: "",
+    offense_conf: 0.0,
+    benign_conf: 0.0,
+  });
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleModalOpen = () => setModalOpen(true);
@@ -44,13 +49,26 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("nice");
+    fetch(`${API_URL}/api/prompt`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ prompt: prompt }),
+    })
+      .then((response) => response.json())
+      .then((obj) =>
+        setData({
+          prompt: obj[0].input,
+          prediction: obj[0].prediction,
+          offense_conf: obj[0].labels.Offensive.confidence,
+          benign_conf: obj[0].labels.Benign.confidence,
+        })
+      )
+      .catch((error) => {
+        console.error("Error:", error);
+      });
     handleModalOpen();
-    setData(null);
-    fetch(`${API_URL}/api?prompt=${prompt}`)
-      .then((res) => res.json())
-      .then((data) => setData(data));
-    console.log(data);
   };
 
   return (
