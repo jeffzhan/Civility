@@ -22,7 +22,7 @@ export default function Home() {
           marginTop: 15,
         }}
       >
-        <Typography variant="h4">
+        <Typography variant="h4" fontFamily="Lato">
           civility
           {/* <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
@@ -37,14 +37,15 @@ export default function Home() {
           An online text analyzer
         </Typography>
 
-        <Typography variant="h5">Simply enter your text below!</Typography>
+        <Typography variant="h5" className={styles.subTitle}>simply enter your text below!</Typography>
 
         <TextField
           className={styles.textBox}
           multiline
           rows={10}
           placeholder="Type text here..."
-          sx={{ width: "100%", marginTop: 5 }}
+          fontFamily="Lato"
+          sx={{ width: "100%", marginTop: 3 }}
         />
         <Stack direction="row" justifyContent="end">
           <Button
@@ -53,9 +54,14 @@ export default function Home() {
               marginTop: 2,
               width: "15%",
               textTransform: "none",
+              borderRadius: "14px",
+              padding: "1rem",
+              backgroundColor: "#585379",
+              "&:hover": { backgroundColor: "#8c84bf" },
             }}
+            hover="none"
           >
-            Check your civility
+            Check your Civility
           </Button>
         </Stack>
         <Stack
@@ -65,12 +71,13 @@ export default function Home() {
           sx={{ marginBottom: 2, left: "46%" }}
         >
           <Link
-            href="#"
+            href="https://github.com/jeffzhan/civility"
             target="_blank"
             rel="noopener noreferrer"
             underline="none"
+            color="#585379"
           >
-            powered by j.a.h.
+            Powered by j.a.h. 😍
           </Link>
         </Stack>
       </Stack>
