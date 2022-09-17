@@ -23,6 +23,24 @@
   line-height: 1.5rem;
 }
 
+.logo{
+  display: flex;
+  float: right;
+  transform: translateY(-30%) translateX(10%);
+}
+
+@media screen and (max-width: 840px){
+  .title {
+    font-size: 3rem;
+  }
+} 
+
+@media screen and (max-width: 690px){
+  .title {
+    font-size: 2.5rem;
+  }
+} 
+
 @media screen and (max-width: 600px) {
   .title {
     font-size: 2.5rem;
@@ -32,5 +50,7 @@
     font-size: 1.3rem;
     line-height: 1.7rem;
   }
-
+  .logo{
+    transform: translateY(-25%) translateX(20%);
+  }
 }
