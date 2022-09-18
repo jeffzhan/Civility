@@ -29,7 +29,7 @@ const ColoredBorderTextField = styled(TextField)`
 `;
 
 export default function Home() {
-  const API_URL = "http://localhost:3001";
+  const API_URL = "https://civility-htn22.herokuapp.com";
 
   const [prompt, setPrompt] = useState("");
   const [data, setData] = useState([
