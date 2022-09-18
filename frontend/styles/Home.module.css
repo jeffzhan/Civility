@@ -12,13 +12,13 @@
 .title {
   color: #585379;
   font-weight: bold;
-  font-family: 'Lato';
+  /* font-family: 'Lato'; */
   font-size: 2.6rem;
 }
 
 .subTitle {
   color: #585379;
-  font-family: 'Lato';
+  /* font-family: 'Lato'; */
   font-size: 1.3rem;
   line-height: 1.5rem;
 }
