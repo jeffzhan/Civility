@@ -125,7 +125,7 @@ export default function Home() {
         </Typography>
         <br></br>
         <Typography variant="h5" className={styles.subTitle}>
-            simply enter your text below, and we'll let you know if you might be about to do something you'll regret ;)
+            simply enter your text below, and we&apos;ll let you know if you might be about to do something you&apos;ll regret :)
         </Typography>
 
         <Box component="form" onSubmit={handleSubmit}>
