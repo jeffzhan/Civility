@@ -102,7 +102,7 @@ export default function Home() {
           marginTop: 10,
         }}
       >
-        <Typography variant="h4" fontFamily="Nunito Sans" color="#585379">
+        <Typography variant="h4" fontFamily="Lato" color="#585379">
           civility
           <div className={styles.logo}>
             <a
@@ -120,11 +120,11 @@ export default function Home() {
           </div>
         </Typography>
 
-        <Typography variant="h2" className={styles.title} sx={{ marginTop: 3 }}>
+        <Typography variant="h2" fontFamily="Lato" className={styles.title} sx={{ marginTop: 3 }}>
           Maintain a spotless online persona - anywhere, anytime.
         </Typography>
         <br></br>
-        <Typography variant="h5" className={styles.subTitle}>
+        <Typography variant="h5" fontFamily="Lato" className={styles.subTitle}>
             simply enter your text below, and we&apos;ll let you know if you might be about to do something you&apos;ll regret :)
         </Typography>
 
@@ -135,7 +135,7 @@ export default function Home() {
             rows={9}
             placeholder="Type text here..."
             inputProps={{
-              style: { fontSize: 20, color: "black", fontFamily: "Nunito Sans" },
+              style: { fontSize: 20, color: "black", fontFamily: "Lato" },
             }}
             sx={{
               width: "100%",
