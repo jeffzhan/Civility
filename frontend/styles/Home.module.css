@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
+@font-face{
+  font-family: "Lato";
+  src: url(../styles/Lato/Lato-Regular.ttf);
+}
 .footer {
   color: #585379;
   font-family: Lato;

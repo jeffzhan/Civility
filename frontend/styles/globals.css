@@ -1,4 +1,8 @@
-@import url('http://fonts.googleapis.com/css2?family=Lato&display=swap');
+@font-face{
+  font-family: "Lato";
+  src: url(../styles/Lato/Lato-Regular.ttf);
+}
+
 html,
 body {
   height: 100%;
