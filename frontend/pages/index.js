@@ -102,7 +102,7 @@ export default function Home() {
           marginTop: 10,
         }}
       >
-        <Typography variant="h4" fontFamily="Lato" color="#585379">
+        <Typography variant="h4" fontFamily="Nunito Sans" color="#585379">
           civility
           <div className={styles.logo}>
             <a
@@ -137,7 +137,7 @@ export default function Home() {
             rows={9}
             placeholder="Type text here..."
             inputProps={{
-              style: { fontSize: 20, color: "black", fontFamily: "Lato" },
+              style: { fontSize: 20, color: "black", fontFamily: "Nunito Sans" },
             }}
             sx={{
               width: "100%",

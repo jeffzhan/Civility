@@ -1,26 +1,24 @@
-@font-face{
-  font-family: 'Lato';
-  src: url(../styles/Lato/Lato-Regular.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
 .footer {
   color: #585379;
-  font-family: 'Lato';
+  font-family: 'Nunito Sans';
 }
 
 .container {
-  font-family: "Lato";
+  font-family: 'Nunito Sans';
 }
 
 .title {
   color: #585379;
   font-weight: bold;
-  font-family: 'Lato';
+  font-family: 'Nunito Sans';
   font-size: 2.6rem;
 }
 
 .subTitle {
   color: #585379;
-  font-family: 'Lato';
+  font-family: 'Nunito Sans';
   font-size: 1.3rem;
   line-height: 1.5rem;
 }
