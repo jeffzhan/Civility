@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const style = {
   position: "absolute",
@@ -15,8 +15,8 @@ const style = {
   color: "#585379",
   "@media (max-width: 600px)": {
     height: "90%",
-    width: "80%"
-  }
+    width: "80%",
+  },
 };
 
 function Results({ data }) {
@@ -37,7 +37,13 @@ function Results({ data }) {
           Age Warning
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
-          Your comment is meant for <b>{data[0].benign > data[0].offense ? "all ages" : "only ages above 18+"}</b>, so please be sensitive of what you type online! 
+          Your comment is meant for{" "}
+          <b>
+            {data[0].benign > data[0].offense
+              ? "all ages"
+              : "only ages above 18+"}
+          </b>
+          , so please be sensitive of what you type online!
         </Typography>
         <br></br>
         <Typography
@@ -47,7 +53,11 @@ function Results({ data }) {
           Political
         </Typography>
         <Typography sx={{ mt: 2, fontSize: 20, fontFamily: "Lato" }}>
-          Your comment seems to fall <b>{Math.round(Math.max(data[1].conservative, data[1].liberal) * 100)}%</b> more towards the {data[1].politics} spectrum.
+          Your comment seems to fall{" "}
+          <b>
+            {Math.round(Math.max(data[1].conservative, data[1].liberal) * 100)}%
+          </b>{" "}
+          more towards the {data[1].politics} spectrum.
         </Typography>
         <br></br>
         <Typography

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Results from "./Results.js";
+import Results from "../components/Results.js";
 import styles from "../styles/Home.module.css";
 import {
   TextField,
