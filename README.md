@@ -2,6 +2,9 @@
 ### Visit Hosted Site:
 https://civility.vercel.app/
 
+### Devpost link with demo video:
+https://devpost.com/software/civility-v2fbel
+
 ### Run locally:
 
 Run in terminal window to start backend server which allows the API connection
